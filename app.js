@@ -30,7 +30,7 @@ io.on("connection", socket => {
   //   clearInterval(interval);
   // }
   // interval = setInterval(() => getApiAndEmit(socket), 1000);
- setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
+ setInterval(() => socket.emit('time', new Date().toTimeString()), 1000);
 
   socket.on('position', (position)=>{
       console.log("Lattitude", position );
